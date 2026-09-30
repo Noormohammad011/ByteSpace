@@ -4,6 +4,7 @@ All changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- Ignore browser-extension attributes on `<html>` and `<body>` so hydration stays quiet when ColorZilla or Grammarly rewrites those tags
 - Added the Home core loop on `feature/home-core-loop`: hero through testimonials on `/`, fed by `data/` and Home assets, with motion left for its own branch
 - Added the app shell on `feature/app-shell`: shared header, blue content region, and footer in the site layout, matching the parent chrome
 - Added the design system foundation on `feature/add-design-system`: ByteSpace tokens in the theme, local Satoshi, Container, and a token sample on `/`

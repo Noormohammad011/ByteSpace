@@ -37,8 +37,14 @@ const RootLayout = ({ children }: LayoutProps<'/'>) => {
     <html
       lang="en"
       className={`${poppins.variable} ${satoshi.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="flex min-h-full flex-col font-body">{children}</body>
+      <body
+        className="flex min-h-full flex-col font-body"
+        suppressHydrationWarning
+      >
+        {children}
+      </body>
     </html>
   )
 }
