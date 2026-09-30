@@ -1,0 +1,308 @@
+{
+  "meta": {
+    "name": "ByteSpace Design System",
+    "sourceFileKey": "0oRvChkmu1Firdw5RTV0OM",
+    "sourceNodeId": "1:1067",
+    "sourceUrl": "https://www.figma.com/design/0oRvChkmu1Firdw5RTV0OM/ByteSpace-New-Check-website--Copy-?t=QCX6TZuvpAApAXx5-0",
+    "extractedAt": "2026-09-29T01:20:00+06:00"
+  },
+  "screens": {
+    "home": "1:1067",
+    "register": "47:351",
+    "login": "49:195",
+    "searchPage": "55:117",
+    "courseDetails": "55:4066",
+    "courseLessons": "60:102",
+    "courseReviews": "60:681",
+    "creatorProfile": "60:1878",
+    "notFound404": "63:252"
+  },
+  "colors": {
+    "electricLime": {
+      "400": "#D4FB20",
+      "500": "#CBFC01"
+    },
+    "electricViolet": {
+      "600": "#7F30F7",
+      "950": "#300B6A"
+    },
+    "persianBlue": {
+      "800": "#003BE2"
+    },
+    "shuttleGray": {
+      "50": "#F5F5F6",
+      "100": "#E5E6E8",
+      "200": "#CED0D3",
+      "300": "#ABAEB5",
+      "400": "#82868E",
+      "700": "#4B4C53",
+      "900": "#3A3B3F",
+      "950": "#242528"
+    },
+    "black": {
+      "950": "#000000",
+      "700": "#4F4F4F"
+    },
+    "neutral": {
+      "white": "#FFFFFF"
+    }
+  },
+  "typography": {
+    "display": {
+      "s": {
+        "fontFamily": "Poppins",
+        "fontWeight": 500,
+        "fontSize": 44,
+        "lineHeight": 52,
+        "letterSpacing": -1
+      },
+      "xs": {
+        "fontFamily": "Poppins",
+        "fontWeight": 500,
+        "fontSize": 36,
+        "lineHeight": 44,
+        "letterSpacing": -1
+      }
+    },
+    "heading": {
+      "l": {
+        "fontFamily": "Poppins",
+        "fontWeight": 600,
+        "fontSize": 72,
+        "lineHeight": 86.4,
+        "letterSpacing": -1,
+        "fluidFontSize": "clamp(2.5rem, 1.7174rem + 3.4783vw, 4.5rem)",
+        "lineHeightRatio": 1.2
+      },
+      "m": {
+        "fontFamily": "Poppins",
+        "fontWeight": 600,
+        "fontSize": 44,
+        "lineHeight": 52.8,
+        "letterSpacing": -1,
+        "fluidFontSize": "clamp(2rem, 1.7065rem + 1.3043vw, 2.75rem)",
+        "lineHeightRatio": 1.2
+      },
+      "s": {
+        "fontFamily": "Poppins",
+        "fontWeight": 600,
+        "fontSize": 24,
+        "lineHeight": 32,
+        "letterSpacing": -1,
+        "fluidFontSize": "clamp(1.25rem, 1.1522rem + 0.4348vw, 1.5rem)",
+        "lineHeightRatio": 1.3333
+      },
+      "xs": {
+        "fontFamily": "Poppins",
+        "fontWeight": 600,
+        "fontSize": 20,
+        "lineHeight": 28,
+        "letterSpacing": -1
+      }
+    },
+    "label": {
+      "xl": {
+        "fontFamily": "Satoshi",
+        "fontWeight": 500,
+        "fontSize": 20,
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "l": {
+        "fontFamily": "Satoshi",
+        "fontWeight": 500,
+        "fontSize": 18,
+        "lineHeight": 21.6,
+        "letterSpacing": 0
+      },
+      "m": {
+        "fontFamily": "Satoshi",
+        "fontWeight": 500,
+        "fontSize": 16,
+        "lineHeight": 19.2,
+        "letterSpacing": 0
+      },
+      "s": {
+        "fontFamily": "Satoshi",
+        "fontWeight": 500,
+        "fontSize": 14,
+        "lineHeight": 16.8,
+        "letterSpacing": 0
+      },
+      "xs": {
+        "fontFamily": "Satoshi",
+        "fontWeight": 500,
+        "fontSize": 12,
+        "lineHeight": 20,
+        "letterSpacing": 0
+      }
+    },
+    "body": {
+      "l": {
+        "fontFamily": "Satoshi",
+        "fontWeight": 400,
+        "fontSize": 18,
+        "lineHeight": 28.8,
+        "letterSpacing": 0,
+        "fontSizeBelowMd": 16,
+        "lineHeightRatio": 1.6
+      },
+      "m": {
+        "fontFamily": "Satoshi",
+        "fontWeight": 400,
+        "fontSize": 16,
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      "s": {
+        "fontFamily": "Satoshi",
+        "fontWeight": 400,
+        "fontSize": 14,
+        "lineHeight": 22.4,
+        "letterSpacing": 0
+      },
+      "xs": {
+        "fontFamily": "Satoshi",
+        "fontWeight": 400,
+        "fontSize": 12,
+        "lineHeight": 19.2,
+        "letterSpacing": 0
+      }
+    }
+  },
+  "effects": {
+    "elevationA": [
+      {
+        "type": "drop-shadow",
+        "color": "#0000000A",
+        "x": 0.5184,
+        "y": 0.7405,
+        "blur": 3.0357,
+        "spread": 0
+      },
+      {
+        "type": "drop-shadow",
+        "color": "#0000000F",
+        "x": 2.2329,
+        "y": 3.1899,
+        "blur": 5.7234,
+        "spread": 0
+      },
+      {
+        "type": "drop-shadow",
+        "color": "#00000012",
+        "x": 5.3829,
+        "y": 7.6899,
+        "blur": 9.5713,
+        "spread": 0
+      },
+      {
+        "type": "drop-shadow",
+        "color": "#00000014",
+        "x": 10.2076,
+        "y": 14.5823,
+        "blur": 16.0875,
+        "spread": 0
+      },
+      {
+        "type": "drop-shadow",
+        "color": "#00000017",
+        "x": 16.9463,
+        "y": 24.2089,
+        "blur": 24,
+        "spread": 0
+      },
+      {
+        "type": "drop-shadow",
+        "color": "#0000001A",
+        "x": 25.8381,
+        "y": 36.9115,
+        "blur": 36,
+        "spread": 0
+      },
+      {
+        "type": "drop-shadow",
+        "color": "#0000001B",
+        "x": 37.1223,
+        "y": 53.0318,
+        "blur": 56,
+        "spread": 0
+      },
+      {
+        "type": "drop-shadow",
+        "color": "#00000021",
+        "x": 51.0381,
+        "y": 72.9116,
+        "blur": 72,
+        "spread": 0
+      }
+    ]
+  },
+  "motion": {
+    "durationMs": {
+      "fast": 160,
+      "base": 240,
+      "enter": 560,
+      "reveal": 640,
+      "float": 7000
+    },
+    "ease": {
+      "out": [0.22, 1, 0.36, 1],
+      "inOut": [0.45, 0, 0.55, 1]
+    },
+    "distancePx": {
+      "enter": 16,
+      "reveal": 24,
+      "page": 12,
+      "float": 8,
+      "hover": 2
+    },
+    "scale": {
+      "press": 0.97
+    },
+    "staggerMs": 80
+  },
+  "layout": {
+    "frameWidth": 1440,
+    "gridColumns": 12,
+    "columnWidth": 120,
+    "baseSpacingScale": [4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 72, 96, 120],
+    "breakpoints": {
+      "xs": 360,
+      "sm": 640,
+      "md": 768,
+      "lg": 1024,
+      "xl": 1280,
+      "2xl": 1536
+    },
+    "containers": {
+      "xs": 100,
+      "sm": 100,
+      "md": 100,
+      "lg": 960,
+      "xl": 1120,
+      "2xl": 1280
+    },
+    "pagePadding": {
+      "mobile": 16,
+      "tablet": 24,
+      "desktop": 32
+    },
+    "content": {
+      "max": 1200,
+      "shellMax": 1264
+    }
+  },
+  "radius": {
+    "card": 16,
+    "pill": 24
+  },
+  "componentPatterns": [
+    "Header_Frame",
+    "Register_Frame",
+    "Course_Card_1",
+    "Section heading + body + CTA block",
+    "Avatar cluster / social proof group",
+    "Form field stack (label + input + action)"
+  ]
+}
