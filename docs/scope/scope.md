@@ -18,7 +18,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 3   | App shell and route structure   | Skeleton   | done        |
 | 4   | Home core loop                  | Slice 1    | done        |
 | 5   | Home responsive pass            | Slice 1    | done        |
-| 6   | Register and Login screens      | Slice 2    | in-progress |
+| 6   | Register and Login screens      | Slice 2    | done        |
 | 7   | Motion and animation            | Slice 3    | in-progress |
 
 ## Foundations
@@ -80,13 +80,15 @@ Make the Figma exact Home work from mobile through `2xl` and clean up its struct
 
 ## Slice 2: Auth screens
 
-### 6. Register and Login screens · in-progress
+### 6. Register and Login screens · done
 
-UI only: the Register (`/register`, frame `47:351`) and Login (`/login`, frame `49:195`) pages from Figma, sharing one split layout (promo panel with the course card collage on the left, form card on the right). Forms validate on the client and submit to a stub, the same way Home stubs its forms. No auth provider, sessions, or real sign in yet; that waits for the Data model and API decision.
+UI only: the Register (`/register`, frame `47:351`) and Login (`/login`, frame `49:195`) pages from Figma, sharing one split layout (promo panel with the course card collage on the left, form card on the right). Forms validate on the client and submit to a stub, the same way Home stubs its forms. No auth provider, sessions, or real sign in yet; that waits for the Data model and API decision. Built straight from Figma and the Home conventions, so no spec is needed. Motion stays out of this feature.
 **Done when:** both pages match Figma at desktop, read well from 360 to `2xl` with no horizontal overflow and 44px touch targets, the fields have labels, required and email checks, and each page links to the other.
 **Branch:** `feature/register-and-login`, pull request into `dev`.
 
-- [ ] Design it (spec): `/architect register and login screens`
+- [x] Design it (spec): skipped, the parent has no auth spec
+- [x] Build it: `/develop register and login screens`
+      Code in `app/(auth)/`, `components/auth/`, `data/auth.ts`, `public/assets/auth/`
 
 ## Slice 3: Motion
 
