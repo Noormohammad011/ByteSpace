@@ -2,6 +2,8 @@
 
 ByteSpace is a course marketplace frontend. Home, Register, and Login are built. They share one design system, one app shell, and one motion setup.
 
+Live: [byte-space-noormohammad011s-projects.vercel.app](https://byte-space-noormohammad011s-projects.vercel.app)
+
 ## Run
 
 Node.js 20 or newer, and pnpm.
@@ -44,5 +46,3 @@ Husky and lint-staged run on each commit. Design tokens live in [`design/design-
 | Home responsive pass            | `feature/home-responsive-pass`                | Home from 360 through `2xl`                    |
 | Register and Login              | `feature/register-and-login`                  | `/register` and `/login`                       |
 | Motion and animation            | `feature/motion-and-animation`                | Shared reveals, float, hover, page transitions |
-
-Register and Login follow the Figma frames and the Home conventions, so they have no spec. The other product slices point at specs `0001` through `0005`.
