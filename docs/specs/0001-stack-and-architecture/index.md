@@ -78,7 +78,7 @@ Scaffold a single Next.js App Router app in the existing `frontend` root with Ty
 
 - [ ] Record installed Vercel skills in root `AGENTS.md` `## Agent skills` (project wide) via `/audit` or `/sync`
 - [ ] Connect MCP: `next-devtools-mcp` (`npx -y next-devtools-mcp@latest`) and `tailwindcss-mcp` in Cursor MCP settings
-- [ ] Design system and UI foundation maps `design/design-system/bytespace.tokens.json` into Tailwind `@theme` (scope feature 2, branch `feature/add-design-system`)
+- [x] Design system and UI foundation maps `design/design-system/bytespace.tokens.json` into Tailwind `@theme` (spec [0002](../0002-design-system-and-ui-foundation/index.md))
 - [ ] Later enroll database and auth specs when those deferred scope rows become active
 
 ## Rationale

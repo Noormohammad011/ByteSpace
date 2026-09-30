@@ -14,7 +14,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | #   | Feature                         | Phase      | Status      |
 | --- | ------------------------------- | ---------- | ----------- |
 | 1   | Stack and architecture          | Foundation | in-progress |
-| 2   | Design system and UI foundation | Foundation | in-progress |
+| 2   | Design system and UI foundation | Foundation | done        |
 | 3   | App shell and route structure   | Skeleton   | in-progress |
 | 4   | Home core loop                  | Slice 1    | in-progress |
 | 5   | Home responsive pass            | Slice 1    | in-progress |
@@ -34,13 +34,15 @@ Decide and scaffold the runnable app so later slices build on a real project: Ne
 - [x] Test it: `/test stack and architecture` (skipped; scaffold already verified, Beta test deferred)
       Spec [0001](../specs/0001-stack-and-architecture/index.md) · code in `./`
 
-### 2. Design system and UI foundation · in-progress
+### 2. Design system and UI foundation · done
 
 Bootstrap only: map the existing Figma capture into the running app so type, color, spacing, elevation, and layout match ByteSpace exactly. Source of truth: `design/design-system/bytespace.tokens.json` and `design/design-system/bytespace.design-system.md` (plus responsive rules already documented there). Includes Satoshi loading, Poppins sizes and tracking, breakpoints, containers, and page padding. No component kit, no Home rebuild, no shell chrome in this feature.
 **Done when:** those token files drive the app theme (colors, fonts, font sizes, spacing, elevation, breakpoints/containers/padding), a tiny sample surface shows them correctly from mobile through `2xl` with no horizontal overflow, and values stay aligned with the Figma capture (not invented).
 **Branch:** `feature/add-design-system`, pull request into `dev`.
 
-- [ ] Design it (spec): `/architect design system and UI foundation`
+- [x] Design it (spec): `/architect design system and UI foundation`
+- [x] Build it: `/develop design system and UI foundation`
+      Spec [0002](../specs/0002-design-system-and-ui-foundation/index.md) · code in `app/`, `components/layout/Container.tsx`, `app/fonts/`
 
 ## Skeleton
 
