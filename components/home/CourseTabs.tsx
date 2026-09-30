@@ -1,6 +1,12 @@
 'use client'
 
-import { useState, type FocusEvent, type ReactNode } from 'react'
+import {
+  startTransition,
+  useState,
+  ViewTransition,
+  type FocusEvent,
+  type ReactNode,
+} from 'react'
 import type { CategoryTab } from '@/data/types'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
@@ -23,10 +29,14 @@ const CourseTabs = ({
 }: CourseTabsProps) => {
   const [value, setValue] = useState(defaultValue)
 
+  const handleValueChange = (nextValue: string) => {
+    startTransition(() => setValue(nextValue))
+  }
+
   return (
     <Tabs
       value={value}
-      onValueChange={setValue}
+      onValueChange={handleValueChange}
       className="w-full items-center gap-48 xl:gap-80"
     >
       <div className="flex w-full flex-col items-center gap-16 lg:max-w-[1100px] lg:flex-row lg:flex-wrap lg:justify-center lg:gap-x-16 lg:gap-y-20">
@@ -48,7 +58,14 @@ const CourseTabs = ({
         </TabsList>
         {moreLink}
       </div>
-      {children}
+      <ViewTransition
+        key={value}
+        name="course-grid"
+        share="course-grid"
+        default="none"
+      >
+        {children}
+      </ViewTransition>
     </Tabs>
   )
 }

@@ -80,23 +80,24 @@ const HeroSection = ({ content }: HeroSectionProps) => {
       <div className="relative mx-auto flex h-full w-full max-w-[1440px] flex-col items-center gap-48 pt-[120px] md:gap-60 md:pt-[152px] xl:block xl:pt-0">
         <div className="relative z-10 flex w-full flex-col items-center gap-40 px-page-mobile md:gap-60 md:px-page-tablet lg:px-page-desktop xl:absolute xl:left-1/2 xl:top-[169px] xl:w-[1200px] xl:-translate-x-1/2 xl:px-0">
           <div className="flex w-full flex-col items-center gap-24 text-center md:gap-32">
-            <h1 className="max-w-[935px] font-heading text-heading-l font-semibold text-neutral-white">
+            <h1 className="max-w-[935px] animate-enter-rise font-heading text-heading-l font-semibold text-neutral-white">
               {content.heroTitle}
             </h1>
-            <p className="font-body text-body-l text-shuttle-gray-100">
+            <p className="animate-enter font-body text-body-l text-shuttle-gray-100 [--enter-step:1]">
               {content.heroBody}
             </p>
           </div>
           <HeroSearchForm
             placeholder={content.heroSearchPlaceholder}
             buttonLabel={content.heroSearchButton}
+            className="animate-enter [--enter-step:2]"
           />
         </div>
 
         <ScaledCanvas
           width={HERO_CANVAS.width}
           height={HERO_CANVAS.height}
-          className="xl:absolute xl:left-[calc(50%-408px)] xl:top-[496px]"
+          className="animate-enter-rise [--enter-step:3] xl:absolute xl:left-[calc(50%-408px)] xl:top-[496px]"
         >
           <div
             className="pointer-events-none absolute left-[-166.5px] top-[86px] size-[1149px] rounded-full bg-brand-lime-500"

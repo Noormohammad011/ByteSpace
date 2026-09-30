@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import type { HomeContent, Testimonial } from '@/data/types'
 import Section from '@/components/layout/Section'
+import { RevealItem } from '@/components/motion/Reveal'
 import { Avatar } from '@/components/ui/avatar'
 import { Card } from '@/components/ui/card'
 
@@ -25,7 +26,7 @@ const TestimonialsSection = ({
         <div className="absolute bottom-[-220px] left-[-160px] size-[480px] rounded-full bg-brand-blue-800/15 blur-[120px]" />
       </div>
 
-      <div className="relative flex flex-col gap-24 md:flex-row md:items-center md:justify-between md:gap-40">
+      <RevealItem className="relative flex flex-col gap-24 md:flex-row md:items-center md:justify-between md:gap-40">
         <h2
           id="testimonials-heading"
           className="max-w-[480px] font-heading text-heading-m font-semibold text-shuttle-gray-950"
@@ -35,11 +36,11 @@ const TestimonialsSection = ({
         <p className="max-w-[580px] font-body text-body-l text-shuttle-gray-700">
           {content.testimonialsBody}
         </p>
-      </div>
+      </RevealItem>
 
       <ul className="relative grid list-none grid-cols-1 items-start gap-24 p-0 lg:grid-cols-3 xl:gap-40">
-        {testimonials.map((item) => (
-          <li key={item.id}>
+        {testimonials.map((item, index) => (
+          <RevealItem as="li" key={item.id} order={index + 1}>
             <Card className="w-full gap-32 rounded-[24px] bg-neutral-white p-24 ring-0">
               <div className="flex flex-col gap-24">
                 <Avatar className="size-80 after:hidden">
@@ -64,7 +65,7 @@ const TestimonialsSection = ({
                 {item.quote}
               </p>
             </Card>
-          </li>
+          </RevealItem>
         ))}
       </ul>
     </Section>

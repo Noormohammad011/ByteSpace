@@ -1,8 +1,9 @@
 import type { ComponentProps } from 'react'
+import { Reveal } from '@/components/motion/Reveal'
 import { cn } from '@/lib/utils'
 import Container from './Container'
 
-type SectionProps = ComponentProps<'section'> & {
+type SectionProps = Omit<ComponentProps<typeof Reveal>, 'as'> & {
   containerClassName?: string
 }
 
@@ -13,12 +14,13 @@ const Section = ({
   ...props
 }: SectionProps) => {
   return (
-    <section
+    <Reveal
+      as="section"
       className={cn('relative w-full py-60 md:py-80', className)}
       {...props}
     >
       <Container className={containerClassName}>{children}</Container>
-    </section>
+    </Reveal>
   )
 }
 

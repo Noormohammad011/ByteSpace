@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import type { HomeContent } from '@/data/types'
 import Section from '@/components/layout/Section'
+import { RevealItem } from '@/components/motion/Reveal'
 import { Button } from '@/components/ui/button'
 import Ornaments, { type Ornament } from '../Ornaments'
 
@@ -84,16 +85,21 @@ const CtaSection = ({ content }: CtaSectionProps) => {
       />
       <Ornaments items={ctaOrnaments} />
 
-      <h2
+      <RevealItem
+        as="h2"
         id="cta-heading"
         className="relative max-w-[620px] font-heading text-heading-m font-semibold text-neutral-white"
       >
         {content.ctaTitle}
-      </h2>
-      <p className="relative font-body text-body-l text-shuttle-gray-100">
+      </RevealItem>
+      <RevealItem
+        as="p"
+        order={1}
+        className="relative font-body text-body-l text-shuttle-gray-100"
+      >
         {content.ctaBody}
-      </p>
-      <div className="relative w-full sm:w-auto">
+      </RevealItem>
+      <RevealItem order={2} className="relative w-full sm:w-auto">
         <Button
           asChild
           variant="lime"
@@ -102,7 +108,7 @@ const CtaSection = ({ content }: CtaSectionProps) => {
         >
           <Link href="/#creator">{content.ctaButtonLabel}</Link>
         </Button>
-      </div>
+      </RevealItem>
     </Section>
   )
 }

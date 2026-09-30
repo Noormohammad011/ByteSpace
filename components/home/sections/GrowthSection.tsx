@@ -2,6 +2,7 @@ import Image from 'next/image'
 import type { Course, HomeContent, Stat } from '@/data/types'
 import Section from '@/components/layout/Section'
 import SectionHeader from '@/components/layout/SectionHeader'
+import { RevealItem } from '@/components/motion/Reveal'
 import CourseCard from '../cards/CourseCard'
 import LearningProgressCard from '../cards/LearningProgressCard'
 import ScaledCanvas from '../ScaledCanvas'
@@ -37,7 +38,11 @@ const GrowthSection = ({
           titleClassName="xl:w-[541px]"
           bodyClassName="xl:w-[470px]"
         />
-        <dl className="mt-24 flex flex-wrap gap-x-40 gap-y-24">
+        <RevealItem
+          as="dl"
+          order={1}
+          className="mt-24 flex flex-wrap gap-x-40 gap-y-24"
+        >
           {stats.map((stat) => (
             <div key={stat.id} className="flex flex-col-reverse gap-4">
               <dt className="font-body text-body-m text-shuttle-gray-700">
@@ -48,10 +53,13 @@ const GrowthSection = ({
               </dd>
             </div>
           ))}
-        </dl>
+        </RevealItem>
       </div>
 
-      <div className="xl:absolute xl:left-[671px] xl:top-[113px]">
+      <RevealItem
+        order={2}
+        className="xl:absolute xl:left-[671px] xl:top-[113px]"
+      >
         <ScaledCanvas width={GROWTH_CANVAS.width} height={GROWTH_CANVAS.height}>
           <CourseCard
             course={featuredCourse}
@@ -75,7 +83,7 @@ const GrowthSection = ({
             className="pointer-events-none absolute left-[450px] top-[91px] z-20 h-auto w-[124px]"
           />
         </ScaledCanvas>
-      </div>
+      </RevealItem>
     </Section>
   )
 }
