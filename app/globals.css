@@ -1,5 +1,145 @@
 @import 'tailwindcss';
 
+@theme inline {
+  --color-brand-lime-400: #d4fb20;
+  --color-brand-lime-500: #cbfc01;
+  --color-brand-violet-600: #7f30f7;
+  --color-brand-violet-950: #300b6a;
+  --color-brand-blue-800: #003be2;
+
+  --color-shuttle-gray-50: #f5f5f6;
+  --color-shuttle-gray-100: #e5e6e8;
+  --color-shuttle-gray-200: #ced0d3;
+  --color-shuttle-gray-300: #abaeb5;
+  --color-shuttle-gray-400: #82868e;
+  --color-shuttle-gray-700: #4b4c53;
+  --color-shuttle-gray-900: #3a3b3f;
+  --color-shuttle-gray-950: #242528;
+
+  --color-black-700: #4f4f4f;
+  --color-black-950: #000000;
+  --color-neutral-white: #ffffff;
+
+  --font-heading: var(--font-poppins), Inter, 'Segoe UI', sans-serif;
+  --font-body: var(--font-satoshi), Inter, 'Segoe UI', sans-serif;
+  --font-sans: var(--font-body);
+
+  --text-display-s: clamp(30.8px, 3.0556vw, 44px);
+  --text-display-s--line-height: 52px;
+  --text-display-s--letter-spacing: -1px;
+
+  --text-display-xs: clamp(28px, 2.5vw, 36px);
+  --text-display-xs--line-height: 44px;
+  --text-display-xs--letter-spacing: -1px;
+
+  --text-heading-l: clamp(2.5rem, 1.7174rem + 3.4783vw, 4.5rem);
+  --text-heading-l--line-height: 1.2;
+  --text-heading-l--letter-spacing: -0.01em;
+
+  --text-heading-m: clamp(2rem, 1.7065rem + 1.3043vw, 2.75rem);
+  --text-heading-m--line-height: 1.2;
+  --text-heading-m--letter-spacing: -1px;
+
+  --text-heading-s: clamp(1.25rem, 1.1522rem + 0.4348vw, 1.5rem);
+  --text-heading-s--line-height: 1.3333;
+  --text-heading-s--letter-spacing: -1px;
+
+  --text-heading-xs: clamp(20px, 1.3889vw, 20px);
+  --text-heading-xs--line-height: 28px;
+  --text-heading-xs--letter-spacing: -1px;
+
+  --text-label-xl: 20px;
+  --text-label-xl--line-height: 24px;
+  --text-label-xl--letter-spacing: 0px;
+
+  --text-label-l: 18px;
+  --text-label-l--line-height: 21.6px;
+  --text-label-l--letter-spacing: 0px;
+
+  --text-label-m: 16px;
+  --text-label-m--line-height: 19.2px;
+  --text-label-m--letter-spacing: 0px;
+
+  --text-label-s: 14px;
+  --text-label-s--line-height: 16.8px;
+  --text-label-s--letter-spacing: 0px;
+
+  --text-label-xs: 12px;
+  --text-label-xs--line-height: 20px;
+  --text-label-xs--letter-spacing: 0px;
+
+  --text-body-l: var(--body-l-size);
+  --text-body-l--line-height: 1.6;
+  --text-body-l--letter-spacing: 0px;
+
+  --text-body-m: 16px;
+  --text-body-m--line-height: 24px;
+  --text-body-m--letter-spacing: 0px;
+
+  --text-body-s: 14px;
+  --text-body-s--line-height: 22.4px;
+  --text-body-s--letter-spacing: 0px;
+
+  --text-body-xs: 12px;
+  --text-body-xs--line-height: 19.2px;
+  --text-body-xs--letter-spacing: 0px;
+
+  --shadow-elevation-a:
+    0.52px 0.74px 3.04px 0 #0000000a, 2.23px 3.19px 5.72px 0 #0000000f,
+    5.38px 7.69px 9.57px 0 #00000012, 10.21px 14.58px 16.09px 0 #00000014,
+    16.95px 24.21px 24px 0 #00000017, 25.84px 36.91px 36px 0 #0000001a,
+    37.12px 53.03px 56px 0 #0000001b, 51.04px 72.91px 72px 0 #00000021;
+
+  --breakpoint-xs: 360px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  --container-lg: 960px;
+  --container-xl: 1120px;
+  --container-2xl: 1280px;
+  --max-width-container-lg: 960px;
+  --max-width-container-xl: 1120px;
+  --max-width-container-2xl: 1280px;
+
+  --spacing-page-mobile: 16px;
+  --spacing-page-tablet: 24px;
+  --spacing-page-desktop: 32px;
+
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+  --spacing-72: 72px;
+  --spacing-96: 96px;
+  --spacing-120: 120px;
+
+  --radius-card: 16px;
+  --radius-pill: 24px;
+  --max-width-content: 1200px;
+  --max-width-shell: 1264px;
+}
+
+:root {
+  --body-l-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --body-l-size: 1.125rem;
+  }
+}
+
 body {
-  font-family: var(--font-poppins), sans-serif;
+  background: var(--color-shuttle-gray-50);
+  color: var(--color-shuttle-gray-950);
+  font-family: var(--font-body);
 }

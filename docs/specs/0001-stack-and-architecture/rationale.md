@@ -57,7 +57,7 @@ Scaffold `apps/web` plus packages, or install auth and DB clients before any UI.
 
 Option 1 wins because the product is a public course website, the scope already chose Next plus TypeScript plus pnpm plus Tailwind, and the landscape check (2026-09-29) shows create-next-app landing on Next 16.x, React 19.2, and Tailwind v4 with App Router. Deferring DB and auth keeps the Tracer Bullet thread honest: prove UI and tooling first, then thicken. Vercel as the host target keeps deploy assumptions boring. Skipping a UI kit avoids fighting ByteSpace tokens before they are wired.
 
-A cross check (another model) found eight unnamed scaffold details. Those are now locked in `index.md` under Scaffold constraints: Node 20, exact create-next-app flags, preserve `design/` and `docs/`, Poppins via `next/font/google`, one time export copy to `public/assets/exports/`, Prettier without semicolons, empty `.env.example`, Tailwind v4 PostCSS plugin, and explicit `@/*` paths.
+A cross check (another model) found eight unnamed scaffold details. Those are now locked in `index.md` under Scaffold constraints: Node 20, exact create-next-app flags, preserve `design/` and `docs/`, Poppins via `next/font/google`, one time export copy to `public/assets/exports/`, Prettier without semicolons, no `.env.example`, Tailwind v4 PostCSS plugin, and explicit `@/*` paths.
 
 ## Landscape notes
 

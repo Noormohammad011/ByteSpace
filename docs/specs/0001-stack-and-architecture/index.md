@@ -25,7 +25,7 @@ Scaffold a single Next.js App Router app in the existing `frontend` root with Ty
 | Path alias              | `tsconfig.json` `compilerOptions.paths`: `"@/*": ["./*"]`                                                                                                                                                                                      |
 | PostCSS                 | `postcss.config.mjs` with plugin `@tailwindcss/postcss` only (Tailwind v4 path)                                                                                                                                                                |
 | Format                  | Install `prettier` and `eslint-config-prettier`. `.prettierrc.json`: `semi: false`, `singleQuote: true`, `trailingComma: "es5"`                                                                                                                |
-| Env                     | Add empty `.env.example`. Keep `.env.local` gitignored. No secrets in scaffold                                                                                                                                                                 |
+| Env                     | No `.env.example`. Keep `.env.local` gitignored. No secrets in scaffold                                                                                                                                                                        |
 | Fonts                   | In root layout, load Poppins via `next/font/google` with weights `400`, `500`, `600`, `700`. Satoshi waits for the design system feature (local or licensed files)                                                                             |
 | Design exports          | One time copy `design/figma-assets/exports/*` → `public/assets/exports/` during scaffold so Home can reference them later                                                                                                                      |
 
@@ -49,7 +49,7 @@ Scaffold a single Next.js App Router app in the existing `frontend` root with Ty
 | UI kit            | None in scaffold                                                   | Design system feature owns tokens and primitives                                 |
 | Primary DB        | Deferred (none in scaffold)                                        | Scope defers data model; Home can ship as UI first                               |
 | Auth              | Deferred (none in scaffold)                                        | Register and Login are deferred in scope                                         |
-| Env               | `.env.example` empty; `.env.local` gitignored                      | Ready for later secrets without inventing vars now                               |
+| Env               | `.env.local` gitignored; no example env file                       | Ready for later secrets without inventing vars now                               |
 | Hosting           | Vercel (decision only; no deploy in this feature)                  | Natural fit for Next App Router                                                  |
 | Observability     | Deferred past scaffold                                             | Add structured logging and error tracking when a real runtime path exists        |
 
@@ -78,7 +78,7 @@ Scaffold a single Next.js App Router app in the existing `frontend` root with Ty
 
 - [ ] Record installed Vercel skills in root `AGENTS.md` `## Agent skills` (project wide) via `/audit` or `/sync`
 - [ ] Connect MCP: `next-devtools-mcp` (`npx -y next-devtools-mcp@latest`) and `tailwindcss-mcp` in Cursor MCP settings
-- [ ] Design system and UI foundation maps `design/design-system/bytespace.tokens.json` into Tailwind `@theme` (scope feature 2, branch `feature/add-design-system`)
+- [x] Design system and UI foundation maps `design/design-system/bytespace.tokens.json` into Tailwind `@theme` (spec [0002](../0002-design-system-and-ui-foundation/index.md))
 - [ ] Later enroll database and auth specs when those deferred scope rows become active
 
 ## Rationale
