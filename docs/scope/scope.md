@@ -17,7 +17,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 2   | Design system and UI foundation | Foundation | done        |
 | 3   | App shell and route structure   | Skeleton   | done        |
 | 4   | Home core loop                  | Slice 1    | done        |
-| 5   | Home responsive pass            | Slice 1    | in-progress |
+| 5   | Home responsive pass            | Slice 1    | done        |
 | 6   | Register and Login screens      | Slice 2    | in-progress |
 | 7   | Motion and animation            | Slice 3    | in-progress |
 
@@ -66,15 +66,17 @@ Thin end to end first product thread: the Home screen from Figma (node `1:1067`)
 
 - [x] Design it (spec): `/architect home core loop`
 - [x] Build it: `/develop home core loop`
-      Code in `app/(site)/page.tsx`, `components/home/`, `components/layout/Section.tsx`, `data/`
+      Spec [0003](../specs/0003-home-core-loop/index.md) · code in `app/(site)/page.tsx`, `components/home/`, `components/layout/Section.tsx`, `data/`
 
-### 5. Home responsive pass · in-progress
+### 5. Home responsive pass · done
 
-Make the Figma exact Home work from mobile through `2xl` and clean up its structure: small single purpose components, shared pieces reused, desktop positions kept as typed constants beside the component that renders them. Your constraint: use shadcn for every interactive primitive on Home (Sheet for the mobile menu, plus Button, Input, Tabs, Card, Avatar), restyled with ByteSpace tokens. On mobile the header shows a hamburger icon on the right that opens a panel sliding in from the right. The header is built here first; feature 3 lifts it into the shared layout later.
+Make the Figma exact Home work from mobile through `2xl` and clean up its structure: small single purpose components, shared pieces reused, desktop positions kept as typed constants beside the component that renders them. Your constraint: use shadcn for every interactive primitive on Home (Sheet for the mobile menu, plus Button, Input, Tabs, Card, Avatar), restyled with ByteSpace tokens. On mobile the header shows a hamburger icon on the right that opens a panel sliding in from the right. The header is built here first; feature 3 lifts it into the shared layout later. Motion stays out of this feature.
 **Done when:** every Home section reads well at 360, `sm`, `md`, `lg`, `xl`, and `2xl` with no horizontal overflow and 44px touch targets, the desktop 1440 view still matches Figma, the mobile menu opens from the right and is keyboard and screen reader friendly, and Home primitives come from shadcn.
 **Branch:** `feature/home-responsive-pass`, pull request into `dev`.
 
-- [ ] Design it (spec): `/architect home responsive pass`
+- [x] Design it (spec): `/architect home responsive pass`
+- [x] Build it: `/develop home responsive pass`
+      Spec [0004](../specs/0004-home-responsive-pass/index.md) · code in `components/home/`, `components/layout/`, `components/site/`, `app/globals.css`
 
 ## Slice 2: Auth screens
 
