@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { CategoryTab, Course, HomeContent } from '@/data/types'
 import Section from '@/components/layout/Section'
 import SectionHeader from '@/components/layout/SectionHeader'
+import { RevealItem } from '@/components/motion/Reveal'
 import { TabsContent } from '@/components/ui/tabs'
 import CourseCard from '../cards/CourseCard'
 import CourseTabs from '../CourseTabs'
@@ -31,7 +32,7 @@ const CoursesSection = ({ content, tabs, courses }: CoursesSectionProps) => {
         bodyClassName="max-w-[930px]"
       />
 
-      <div className="w-full">
+      <RevealItem order={1} className="w-full">
         <CourseTabs
           tabs={tabs}
           defaultValue={DEFAULT_TAB_ID}
@@ -66,7 +67,7 @@ const CoursesSection = ({ content, tabs, courses }: CoursesSectionProps) => {
             )
           })}
         </CourseTabs>
-      </div>
+      </RevealItem>
     </Section>
   )
 }

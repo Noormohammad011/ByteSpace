@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { RevealItem } from '@/components/motion/Reveal'
 import { cn } from '@/lib/utils'
 
 type SectionHeaderProps = {
@@ -26,7 +27,9 @@ const SectionHeader = ({
   bodyClassName,
 }: SectionHeaderProps) => {
   return (
-    <div className={cn('flex flex-col gap-20', alignClasses[align], className)}>
+    <RevealItem
+      className={cn('flex flex-col gap-20', alignClasses[align], className)}
+    >
       <h2
         id={id}
         className={cn(
@@ -46,7 +49,7 @@ const SectionHeader = ({
           {body}
         </p>
       ) : null}
-    </div>
+    </RevealItem>
   )
 }
 

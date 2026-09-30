@@ -36,21 +36,21 @@ const AuthShell = ({ promoTitle, promoBody, children }: AuthShellProps) => {
 
         <section className="flex flex-col lg:min-w-0 lg:flex-1 xl:max-w-[500px]">
           <div className="flex flex-col gap-16 xl:h-[184px]">
-            <h2 className="font-heading text-heading-xs font-semibold tracking-normal text-shuttle-gray-50">
+            <h2 className="animate-enter-rise font-heading text-heading-xs font-semibold tracking-normal text-shuttle-gray-50">
               {promoTitle}
             </h2>
-            <p className="font-body text-body-l text-shuttle-gray-50 xl:max-w-[480px]">
+            <p className="animate-enter font-body text-body-l text-shuttle-gray-50 xl:max-w-[480px]">
               {promoBody}
             </p>
           </div>
           <AuthCollage
             backCourse={authCollageCourses.back}
             frontCourse={authCollageCourses.front}
-            className="hidden lg:mt-48 lg:block xl:mt-0"
+            className="hidden animate-enter [--enter-step:2] lg:mt-48 lg:block xl:mt-0"
           />
         </section>
 
-        <div className="w-full lg:w-[440px] lg:shrink-0 xl:mt-4 xl:w-[580px]">
+        <div className="w-full animate-enter [--enter-step:1] lg:w-[440px] lg:shrink-0 xl:mt-4 xl:w-[580px]">
           {children}
         </div>
       </div>

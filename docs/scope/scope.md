@@ -11,15 +11,15 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 
 ## At a glance
 
-| #   | Feature                         | Phase      | Status      |
-| --- | ------------------------------- | ---------- | ----------- |
-| 1   | Stack and architecture          | Foundation | done        |
-| 2   | Design system and UI foundation | Foundation | done        |
-| 3   | App shell and route structure   | Skeleton   | done        |
-| 4   | Home core loop                  | Slice 1    | done        |
-| 5   | Home responsive pass            | Slice 1    | done        |
-| 6   | Register and Login screens      | Slice 2    | done        |
-| 7   | Motion and animation            | Slice 3    | in-progress |
+| #   | Feature                         | Phase      | Status |
+| --- | ------------------------------- | ---------- | ------ |
+| 1   | Stack and architecture          | Foundation | done   |
+| 2   | Design system and UI foundation | Foundation | done   |
+| 3   | App shell and route structure   | Skeleton   | done   |
+| 4   | Home core loop                  | Slice 1    | done   |
+| 5   | Home responsive pass            | Slice 1    | done   |
+| 6   | Register and Login screens      | Slice 2    | done   |
+| 7   | Motion and animation            | Slice 3    | done   |
 
 ## Foundations
 
@@ -92,13 +92,15 @@ UI only: the Register (`/register`, frame `47:351`) and Login (`/login`, frame `
 
 ## Slice 3: Motion
 
-### 7. Motion and animation · in-progress
+### 7. Motion and animation · done
 
 Polished, subtle motion across Home, Register and Login so the site feels alive: sections fade and rise in on scroll, the hero and auth collage images float gently, buttons, cards and category tiles react on hover and press, and moving between pages uses smooth transitions. One shared set of motion tokens (durations, easings, distances) in the design system, so every page moves the same way. The Figma layout at 1440 stays exactly as it is once the motion settles.
 **Done when:** Home, Register and Login use the shared motion tokens for scroll reveals, gentle floating images, hover and press feedback, and page transitions; everything is still when the system asks for reduced motion; motion causes no layout shift and no horizontal overflow from 360 to `2xl`; it animates only transform and opacity, so it stays smooth on a mid range phone; and the settled 1440 view still matches Figma.
 **Branch:** `feature/motion-and-animation`, pull request into `dev`.
 
-- [ ] Design it (spec): `/architect motion and animation`
+- [x] Design it (spec): `/architect motion and animation`
+- [x] Build it: `/develop motion and animation`
+      Spec [0005](../specs/0005-motion-and-animation/index.md) · code in `app/globals.css`, `components/motion/`, `lib/motion.ts`, `components/home/`, `components/auth/`, `components/layout/`, `app/`
 
 ## Deferred
 
