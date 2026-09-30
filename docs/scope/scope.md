@@ -16,7 +16,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 1   | Stack and architecture          | Foundation | done        |
 | 2   | Design system and UI foundation | Foundation | done        |
 | 3   | App shell and route structure   | Skeleton   | done        |
-| 4   | Home core loop                  | Slice 1    | in-progress |
+| 4   | Home core loop                  | Slice 1    | done        |
 | 5   | Home responsive pass            | Slice 1    | in-progress |
 | 6   | Register and Login screens      | Slice 2    | in-progress |
 | 7   | Motion and animation            | Slice 3    | in-progress |
@@ -58,13 +58,15 @@ Shared chrome and App Router layout (header, content region, footer hooks) so th
 
 ## Slice 1: Home core loop
 
-### 4. Home core loop · in-progress
+### 4. Home core loop · done
 
-Thin end to end first product thread: the Home screen from Figma (node `1:1067`) on `/`, with design system tokens and `data/` dummies. Exact desktop 1440 match first; responsive is a follow up.
+Thin end to end first product thread: the Home screen from Figma (node `1:1067`) on `/`, with design system tokens and `data/` dummies. Exact desktop 1440 match first; responsive is a follow up. Motion stays out of this feature.
 **Done when:** a visitor can open `/` and see the full Home sections match Figma desktop intent (nav through footer), fed by `data/` loops and Home assets.
 **Branch:** `feature/home-core-loop`, pull request into `dev`.
 
-- [ ] Design it (spec): `/architect home core loop`
+- [x] Design it (spec): `/architect home core loop`
+- [x] Build it: `/develop home core loop`
+      Code in `app/(site)/page.tsx`, `components/home/`, `components/layout/Section.tsx`, `data/`
 
 ### 5. Home responsive pass · in-progress
 
