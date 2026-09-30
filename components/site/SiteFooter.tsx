@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { FooterColumn, HomeContent } from '@/data/types'
 import Container from '@/components/layout/Container'
+import { Reveal, RevealItem } from '@/components/motion/Reveal'
 import NewsletterForm from './NewsletterForm'
 
 type SiteFooterProps = {
@@ -14,10 +15,13 @@ const footerLinkClassName =
 
 const SiteFooter = ({ content, columns }: SiteFooterProps) => {
   return (
-    <footer className="w-full border-t border-shuttle-gray-200 bg-neutral-white pb-40 pt-60 md:pt-72">
+    <Reveal
+      as="footer"
+      className="w-full border-t border-shuttle-gray-200 bg-neutral-white pb-40 pt-60 md:pt-72"
+    >
       <Container className="flex flex-col gap-64 xl:gap-[120px]">
         <div className="flex flex-col gap-48 xl:flex-row xl:items-start xl:justify-between">
-          <div className="flex max-w-[500px] flex-col gap-24">
+          <RevealItem className="flex max-w-[500px] flex-col gap-24">
             <Link
               href="/"
               className="flex min-h-[44px] items-center gap-8 self-start lg:min-h-0"
@@ -39,9 +43,11 @@ const SiteFooter = ({ content, columns }: SiteFooterProps) => {
               buttonLabel={content.newsletterButton}
               disclaimer={content.newsletterDisclaimer}
             />
-          </div>
+          </RevealItem>
 
-          <nav
+          <RevealItem
+            as="nav"
+            order={1}
             aria-label="Footer"
             className="grid grid-cols-2 gap-x-32 gap-y-24 sm:grid-cols-3 xl:w-[580px] xl:grid-cols-[207px_207px_166px] xl:gap-0 xl:pt-56"
           >
@@ -62,10 +68,13 @@ const SiteFooter = ({ content, columns }: SiteFooterProps) => {
                 </ul>
               </div>
             ))}
-          </nav>
+          </RevealItem>
         </div>
 
-        <div className="flex flex-col gap-16 border-t border-shuttle-gray-200 pt-32 md:flex-row md:items-center md:justify-between">
+        <RevealItem
+          order={2}
+          className="flex flex-col gap-16 border-t border-shuttle-gray-200 pt-32 md:flex-row md:items-center md:justify-between"
+        >
           <p className="font-body text-body-xs text-shuttle-gray-950">
             {content.copyright}
           </p>
@@ -81,9 +90,9 @@ const SiteFooter = ({ content, columns }: SiteFooterProps) => {
               </li>
             ))}
           </ul>
-        </div>
+        </RevealItem>
       </Container>
-    </footer>
+    </Reveal>
   )
 }
 

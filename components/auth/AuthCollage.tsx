@@ -2,6 +2,7 @@ import Image from 'next/image'
 import type { Course } from '@/data/types'
 import CourseCard from '@/components/home/cards/CourseCard'
 import HappyStudentsCard from '@/components/home/cards/HappyStudentsCard'
+import { floatOffset } from '@/components/home/Ornaments'
 import ScaledCanvas from '@/components/home/ScaledCanvas'
 
 type AuthCollageProps = {
@@ -43,14 +44,16 @@ const AuthCollage = ({
           alt=""
           width={900}
           height={824}
-          className="absolute left-[50px] top-[45px] h-auto w-[101px]"
+          style={floatOffset(0, 3)}
+          className="absolute left-[50px] top-[45px] h-auto w-[101px] animate-float"
         />
         <Image
           src="/assets/home/hero/pyramid-lime.png"
           alt=""
           width={818}
           height={900}
-          className="absolute left-[-1px] top-[421px] h-auto w-[126px]"
+          style={floatOffset(1, 3)}
+          className="absolute left-[-1px] top-[421px] h-auto w-[126px] animate-float"
         />
         <HappyStudentsCard
           tone="lime"
@@ -61,7 +64,8 @@ const AuthCollage = ({
           alt=""
           width={686}
           height={900}
-          className="absolute left-[395px] top-[356px] h-auto w-[98px] blur-[1px]"
+          style={floatOffset(2, 3)}
+          className="absolute left-[395px] top-[356px] h-auto w-[98px] animate-float blur-[1px]"
         />
       </ScaledCanvas>
     </div>

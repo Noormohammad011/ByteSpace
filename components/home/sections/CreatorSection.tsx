@@ -2,6 +2,7 @@ import Image from 'next/image'
 import type { HomeContent } from '@/data/types'
 import Section from '@/components/layout/Section'
 import SectionHeader from '@/components/layout/SectionHeader'
+import { RevealItem } from '@/components/motion/Reveal'
 import { Card } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import HappyStudentsCard from '../cards/HappyStudentsCard'
@@ -39,7 +40,7 @@ const CreatorSection = ({ content }: CreatorSectionProps) => {
       className="xl:py-0"
       containerClassName="flex flex-col gap-48 xl:relative xl:block xl:h-[738px]"
     >
-      <div className="xl:absolute xl:left-32 xl:top-[17px]">
+      <RevealItem order={2} className="xl:absolute xl:left-32 xl:top-[17px]">
         <ScaledCanvas
           width={CREATOR_CANVAS.width}
           height={CREATOR_CANVAS.height}
@@ -96,7 +97,7 @@ const CreatorSection = ({ content }: CreatorSectionProps) => {
           />
           <HappyStudentsCard className="absolute left-[283px] top-[416px] z-20 shadow-elevation-a" />
         </ScaledCanvas>
-      </div>
+      </RevealItem>
 
       <div className="flex flex-col gap-40 xl:absolute xl:left-[652px] xl:top-[127px] xl:w-[551px]">
         <SectionHeader
@@ -114,7 +115,11 @@ const CreatorSection = ({ content }: CreatorSectionProps) => {
           className="gap-40"
           titleClassName="xl:w-[420px]"
         />
-        <ul className="flex list-none flex-col gap-12 p-0">
+        <RevealItem
+          as="ul"
+          order={1}
+          className="flex list-none flex-col gap-12 p-0"
+        >
           {content.creatorBullets.map((bullet) => (
             <li key={bullet} className="flex min-h-[28px] items-center gap-12">
               <CheckIcon />
@@ -123,7 +128,7 @@ const CreatorSection = ({ content }: CreatorSectionProps) => {
               </span>
             </li>
           ))}
-        </ul>
+        </RevealItem>
       </div>
     </Section>
   )
