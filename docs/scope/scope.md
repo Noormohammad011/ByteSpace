@@ -15,7 +15,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | --- | ------------------------------- | ---------- | ----------- |
 | 1   | Stack and architecture          | Foundation | in-progress |
 | 2   | Design system and UI foundation | Foundation | done        |
-| 3   | App shell and route structure   | Skeleton   | in-progress |
+| 3   | App shell and route structure   | Skeleton   | done        |
 | 4   | Home core loop                  | Slice 1    | in-progress |
 | 5   | Home responsive pass            | Slice 1    | in-progress |
 | 6   | Register and Login screens      | Slice 2    | in-progress |
@@ -46,13 +46,15 @@ Bootstrap only: map the existing Figma capture into the running app so type, col
 
 ## Skeleton
 
-### 3. App shell and route structure · in-progress
+### 3. App shell and route structure · done
 
-Shared chrome and App Router layout (header, content region, footer hooks) so the Home slice and later pages plug into one shell. Waits until the design system bootstrap is in place.
+Shared chrome and App Router layout (header, content region, footer hooks) so the Home slice and later pages plug into one shell. The header sits on the blue content region, and the footer closes the page. Motion stays out of this feature.
 **Done when:** the shell renders on a base route, uses design system tokens, and stays responsive under the foundation rules.
 **Branch:** `feature/app-shell`, pull request into `dev`.
 
-- [ ] Design it (spec): `/architect app shell and route structure`
+- [x] Design it (spec): `/architect app shell and route structure`
+- [x] Build it: `/develop app shell and route structure`
+      Code in `app/(site)/`, `components/site/`, `components/layout/Container.tsx`, `components/ui/`
 
 ## Slice 1: Home core loop
 
