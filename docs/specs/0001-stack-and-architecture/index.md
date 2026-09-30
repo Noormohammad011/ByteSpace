@@ -1,7 +1,7 @@
 # 0001. Stack and architecture for ByteSpace frontend
 
 **Date**: 2026-09-29
-**Status**: In Progress
+**Status**: Done
 
 ## Summary
 

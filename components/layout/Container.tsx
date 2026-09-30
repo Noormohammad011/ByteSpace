@@ -1,16 +1,15 @@
-const Container = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode
-  className?: string
-}) => {
+import type { ComponentProps } from 'react'
+import { cn } from '@/lib/utils'
+
+const Container = ({ className, ...props }: ComponentProps<'div'>) => {
   return (
     <div
-      className={`mx-auto w-full px-page-mobile md:px-page-tablet lg:max-w-container-lg lg:px-page-desktop xl:max-w-container-xl 2xl:max-w-container-2xl ${className ?? ''}`}
-    >
-      {children}
-    </div>
+      className={cn(
+        'mx-auto w-full px-page-mobile md:px-page-tablet lg:px-page-desktop xl:max-w-shell',
+        className
+      )}
+      {...props}
+    />
   )
 }
 
