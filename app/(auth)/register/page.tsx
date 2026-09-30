@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ViewTransition } from 'react'
 import { registerContent } from '@/data'
 import AuthCard from '@/components/auth/AuthCard'
 import AuthShell from '@/components/auth/AuthShell'
@@ -16,14 +17,16 @@ export const metadata: Metadata = {
 
 const RegisterPage = () => {
   return (
-    <AuthShell
-      promoTitle={registerContent.promoTitle}
-      promoBody={registerContent.promoBody}
-    >
-      <AuthCard content={registerContent}>
-        <RegisterForm submitLabel={registerContent.submitLabel} />
-      </AuthCard>
-    </AuthShell>
+    <ViewTransition enter="page" exit="page" default="none">
+      <AuthShell
+        promoTitle={registerContent.promoTitle}
+        promoBody={registerContent.promoBody}
+      >
+        <AuthCard content={registerContent}>
+          <RegisterForm submitLabel={registerContent.submitLabel} />
+        </AuthCard>
+      </AuthShell>
+    </ViewTransition>
   )
 }
 

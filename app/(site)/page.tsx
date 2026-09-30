@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ViewTransition } from 'react'
 import CategoriesSection from '@/components/home/sections/CategoriesSection'
 import CoursesSection from '@/components/home/sections/CoursesSection'
 import CreatorSection from '@/components/home/sections/CreatorSection'
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
 
 const Page = () => {
   return (
-    <>
+    <ViewTransition enter="page" exit="page" default="none">
       <HeroSection content={home} />
       <PartnersSection partners={partners} />
       <CoursesSection content={home} tabs={categoryTabs} courses={courses} />
@@ -49,7 +50,7 @@ const Page = () => {
       </div>
       <CtaSection content={home} />
       <TestimonialsSection content={home} testimonials={testimonials} />
-    </>
+    </ViewTransition>
   )
 }
 
