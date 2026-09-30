@@ -1,0 +1,25 @@
+---
+description: Enforce ByteSpace design system and responsive rules
+alwaysApply: true
+---
+
+# ByteSpace Design System Enforcement
+
+Always follow these files as source of truth:
+- `design/design-system/bytespace.tokens.json`
+- `design/design-system/bytespace.design-system.md`
+
+## Mandatory implementation rules
+
+- Build mobile-first and apply responsive upgrades at `sm`, `md`, `lg`, `xl`, and `2xl`
+- Use ByteSpace token values for color, typography, spacing, and elevation before introducing new values
+- Prefer Tailwind utilities and map token values into config/variables instead of ad-hoc inline values
+- Keep forms, cards, and navigation responsive with stack-to-row transitions at `md` and above
+- Preserve accessibility: touch targets >= 44px, readable text scales, and no breakpoint-induced horizontal overflow
+
+## Design consistency checks before finalizing
+
+- Verify component spacing uses the defined base spacing scale
+- Verify heading/body styles use the documented Poppins/Satoshi pair
+- Verify brand palette usage is from Electric Lime, Electric Violet, Persian Blue, Shuttle Gray, and Neutral tokens
+- If introducing new tokens, document them in `bytespace.tokens.json` and update `bytespace.design-system.md`

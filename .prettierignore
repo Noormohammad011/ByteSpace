@@ -1,0 +1,8 @@
+node_modules
+.agents
+.next
+out
+build
+pnpm-lock.yaml
+public/assets/exports
+design/figma-assets
