@@ -4,6 +4,7 @@ All changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- Added Register and Login on `feature/register-and-login`: `/register` and `/login` share the parent split layout, with client-side checks and a stub submit. The parent has no auth spec
 - Added the Home responsive pass on `feature/home-responsive-pass`: the parent responsive Home layout was already in the Home slice, and specs 0003 and 0004 are now in `docs/specs`
 - Ignore browser-extension attributes on `<html>` and `<body>` so hydration stays quiet when ColorZilla or Grammarly rewrites those tags
 - Added the Home core loop on `feature/home-core-loop`: hero through testimonials on `/`, fed by `data/` and Home assets, with motion left for its own branch
