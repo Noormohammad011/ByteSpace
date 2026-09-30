@@ -11,15 +11,15 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 
 ## At a glance
 
-| #   | Feature                         | Phase      | Status      |
-| --- | ------------------------------- | ---------- | ----------- |
-| 1   | Stack and architecture          | Foundation | done        |
-| 2   | Design system and UI foundation | Foundation | done        |
-| 3   | App shell and route structure   | Skeleton   | done        |
-| 4   | Home core loop                  | Slice 1    | in-progress |
-| 5   | Home responsive pass            | Slice 1    | in-progress |
-| 6   | Register and Login screens      | Slice 2    | in-progress |
-| 7   | Motion and animation            | Slice 3    | in-progress |
+| #   | Feature                         | Phase      | Status |
+| --- | ------------------------------- | ---------- | ------ |
+| 1   | Stack and architecture          | Foundation | done   |
+| 2   | Design system and UI foundation | Foundation | done   |
+| 3   | App shell and route structure   | Skeleton   | done   |
+| 4   | Home core loop                  | Slice 1    | done   |
+| 5   | Home responsive pass            | Slice 1    | done   |
+| 6   | Register and Login screens      | Slice 2    | done   |
+| 7   | Motion and animation            | Slice 3    | done   |
 
 ## Foundations
 
@@ -58,41 +58,49 @@ Shared chrome and App Router layout (header, content region, footer hooks) so th
 
 ## Slice 1: Home core loop
 
-### 4. Home core loop · in-progress
+### 4. Home core loop · done
 
-Thin end to end first product thread: the Home screen from Figma (node `1:1067`) on `/`, with design system tokens and `data/` dummies. Exact desktop 1440 match first; responsive is a follow up.
+Thin end to end first product thread: the Home screen from Figma (node `1:1067`) on `/`, with design system tokens and `data/` dummies. Exact desktop 1440 match first; responsive is a follow up. Motion stays out of this feature.
 **Done when:** a visitor can open `/` and see the full Home sections match Figma desktop intent (nav through footer), fed by `data/` loops and Home assets.
 **Branch:** `feature/home-core-loop`, pull request into `dev`.
 
-- [ ] Design it (spec): `/architect home core loop`
+- [x] Design it (spec): `/architect home core loop`
+- [x] Build it: `/develop home core loop`
+      Spec [0003](../specs/0003-home-core-loop/index.md) · code in `app/(site)/page.tsx`, `components/home/`, `components/layout/Section.tsx`, `data/`
 
-### 5. Home responsive pass · in-progress
+### 5. Home responsive pass · done
 
-Make the Figma exact Home work from mobile through `2xl` and clean up its structure: small single purpose components, shared pieces reused, desktop positions kept as typed constants beside the component that renders them. Your constraint: use shadcn for every interactive primitive on Home (Sheet for the mobile menu, plus Button, Input, Tabs, Card, Avatar), restyled with ByteSpace tokens. On mobile the header shows a hamburger icon on the right that opens a panel sliding in from the right. The header is built here first; feature 3 lifts it into the shared layout later.
+Make the Figma exact Home work from mobile through `2xl` and clean up its structure: small single purpose components, shared pieces reused, desktop positions kept as typed constants beside the component that renders them. Your constraint: use shadcn for every interactive primitive on Home (Sheet for the mobile menu, plus Button, Input, Tabs, Card, Avatar), restyled with ByteSpace tokens. On mobile the header shows a hamburger icon on the right that opens a panel sliding in from the right. The header is built here first; feature 3 lifts it into the shared layout later. Motion stays out of this feature.
 **Done when:** every Home section reads well at 360, `sm`, `md`, `lg`, `xl`, and `2xl` with no horizontal overflow and 44px touch targets, the desktop 1440 view still matches Figma, the mobile menu opens from the right and is keyboard and screen reader friendly, and Home primitives come from shadcn.
 **Branch:** `feature/home-responsive-pass`, pull request into `dev`.
 
-- [ ] Design it (spec): `/architect home responsive pass`
+- [x] Design it (spec): `/architect home responsive pass`
+- [x] Build it: `/develop home responsive pass`
+      Spec [0004](../specs/0004-home-responsive-pass/index.md) · code in `components/home/`, `components/layout/`, `components/site/`, `app/globals.css`
 
 ## Slice 2: Auth screens
 
-### 6. Register and Login screens · in-progress
+### 6. Register and Login screens · done
 
-UI only: the Register (`/register`, frame `47:351`) and Login (`/login`, frame `49:195`) pages from Figma, sharing one split layout (promo panel with the course card collage on the left, form card on the right). Forms validate on the client and submit to a stub, the same way Home stubs its forms. No auth provider, sessions, or real sign in yet; that waits for the Data model and API decision.
+UI only: the Register (`/register`, frame `47:351`) and Login (`/login`, frame `49:195`) pages from Figma, sharing one split layout (promo panel with the course card collage on the left, form card on the right). Forms validate on the client and submit to a stub, the same way Home stubs its forms. No auth provider, sessions, or real sign in yet; that waits for the Data model and API decision. Built straight from Figma and the Home conventions, so no spec is needed. Motion stays out of this feature.
 **Done when:** both pages match Figma at desktop, read well from 360 to `2xl` with no horizontal overflow and 44px touch targets, the fields have labels, required and email checks, and each page links to the other.
 **Branch:** `feature/register-and-login`, pull request into `dev`.
 
-- [ ] Design it (spec): `/architect register and login screens`
+- [x] Design it (spec): skipped, the parent has no auth spec
+- [x] Build it: `/develop register and login screens`
+      Code in `app/(auth)/`, `components/auth/`, `data/auth.ts`, `public/assets/auth/`
 
 ## Slice 3: Motion
 
-### 7. Motion and animation · in-progress
+### 7. Motion and animation · done
 
 Polished, subtle motion across Home, Register and Login so the site feels alive: sections fade and rise in on scroll, the hero and auth collage images float gently, buttons, cards and category tiles react on hover and press, and moving between pages uses smooth transitions. One shared set of motion tokens (durations, easings, distances) in the design system, so every page moves the same way. The Figma layout at 1440 stays exactly as it is once the motion settles.
 **Done when:** Home, Register and Login use the shared motion tokens for scroll reveals, gentle floating images, hover and press feedback, and page transitions; everything is still when the system asks for reduced motion; motion causes no layout shift and no horizontal overflow from 360 to `2xl`; it animates only transform and opacity, so it stays smooth on a mid range phone; and the settled 1440 view still matches Figma.
 **Branch:** `feature/motion-and-animation`, pull request into `dev`.
 
-- [ ] Design it (spec): `/architect motion and animation`
+- [x] Design it (spec): `/architect motion and animation`
+- [x] Build it: `/develop motion and animation`
+      Spec [0005](../specs/0005-motion-and-animation/index.md) · code in `app/globals.css`, `components/motion/`, `lib/motion.ts`, `components/home/`, `components/auth/`, `components/layout/`, `app/`
 
 ## Deferred
 

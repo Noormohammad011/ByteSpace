@@ -178,10 +178,22 @@
   --ring: #003be2;
   --radius: 16px;
   --body-l-size: 1rem;
+
+  /* Mirror of the `motion` group in bytespace.tokens.json; keep both in sync. */
   --motion-duration-fast: 160ms;
+  --motion-duration-base: 240ms;
+  --motion-duration-enter: 560ms;
+  --motion-duration-reveal: 640ms;
+  --motion-duration-float: 7s;
   --motion-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+  --motion-distance-enter: 16px;
+  --motion-distance-reveal: 24px;
+  --motion-distance-page: 12px;
+  --motion-distance-float: 8px;
   --motion-distance-hover: 2px;
   --motion-scale-press: 0.97;
+  --motion-stagger: 80ms;
 }
 
 @media (min-width: 768px) {
@@ -199,5 +211,98 @@
     background: var(--color-shuttle-gray-50);
     color: var(--color-shuttle-gray-950);
     font-family: var(--font-body);
+  }
+}
+
+@keyframes enter-fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--motion-distance-enter));
+  }
+}
+
+@keyframes enter-rise {
+  from {
+    transform: translateY(var(--motion-distance-enter));
+  }
+}
+
+@keyframes float {
+  from {
+    transform: translateY(calc(var(--motion-distance-float) * -1));
+  }
+  to {
+    transform: translateY(var(--motion-distance-float));
+  }
+}
+
+@keyframes page-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--motion-distance-page));
+  }
+}
+
+/* Above the fold entrance: pure CSS so it plays before hydration. Set --enter-step per target. */
+@utility animate-enter {
+  animation: enter-fade-rise var(--motion-duration-enter) var(--motion-ease-out)
+    both;
+  animation-delay: calc(var(--enter-step, 0) * var(--motion-stagger));
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+/* Same rise without the fade, for likely largest paint elements. */
+@utility animate-enter-rise {
+  animation: enter-rise var(--motion-duration-enter) var(--motion-ease-out) both;
+  animation-delay: calc(var(--enter-step, 0) * var(--motion-stagger));
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+/* One cycle is up then down, so each direction takes half of duration-float. */
+@utility animate-float {
+  animation: float calc(var(--motion-duration-float) / 2)
+    var(--motion-ease-in-out) var(--float-offset, 0s) infinite alternate both;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+::view-transition {
+  pointer-events: none;
+}
+
+::view-transition-old(.page) {
+  animation: page-out var(--motion-duration-base) var(--motion-ease-out) both;
+}
+
+::view-transition-new(.page) {
+  animation: page-in var(--motion-duration-enter) var(--motion-ease-out) both;
+}
+
+::view-transition-group(.course-grid) {
+  animation-duration: var(--motion-duration-base);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
   }
 }
