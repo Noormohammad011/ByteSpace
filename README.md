@@ -2,7 +2,7 @@
 
 ByteSpace is a course marketplace frontend. Home, Register, and Login are built. They share one design system, one app shell, and one motion setup.
 
-Live: [byte-space-green.vercel.app](https://byte-space-green.vercel.app)
+Live: [byte-space-hub.vercel.app](https://byte-space-hub.vercel.app)
 
 ## Run
 
