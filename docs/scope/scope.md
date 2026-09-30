@@ -13,7 +13,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 
 | #   | Feature                         | Phase      | Status      |
 | --- | ------------------------------- | ---------- | ----------- |
-| 1   | Stack and architecture          | Foundation | in-progress |
+| 1   | Stack and architecture          | Foundation | done        |
 | 2   | Design system and UI foundation | Foundation | done        |
 | 3   | App shell and route structure   | Skeleton   | done        |
 | 4   | Home core loop                  | Slice 1    | in-progress |
@@ -23,7 +23,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 
 ## Foundations
 
-### 1. Stack and architecture · in-progress
+### 1. Stack and architecture · done
 
 Decide and scaffold the runnable app so later slices build on a real project: Next.js latest, TypeScript, pnpm, and Tailwind latest.
 **Done when:** the stack choice is recorded in a spec and the empty scaffold boots locally with `pnpm` and passes build.
